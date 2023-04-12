@@ -12,7 +12,7 @@ export const getData = () => {
     axios
       .get('https://jsonplaceholder.typicode.com/todos')
       .then((res) => {
-        const data = res.data.map((el) => el.userId === 1);
+        const data = res.data.slice(0, 5);
         dispatch(Read(data));
       })
       .catch((error) => {
