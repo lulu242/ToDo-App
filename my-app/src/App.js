@@ -12,11 +12,18 @@ function App() {
   }, []);
 
   return (
-    <>
+    <ul>
       {data.map((el) => {
-        return <div key={el.id}>{el.title}</div>;
+        return (
+          <li key={el.id} className="bg-pink-50 w-80 flex">
+            <div className="w-8 text-center">{el.completed ? '✅' : '⬜'}</div>
+            <div className="w-56">{el.title}</div>
+            <div className="w-8 text-center">✏️</div>
+            <div className="w-8 text-center">🗑️</div>
+          </li>
+        );
       })}
-    </>
+    </ul>
   );
 }
 
